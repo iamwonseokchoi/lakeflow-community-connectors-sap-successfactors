@@ -26,7 +26,7 @@ To configure the connector, provide the following parameters in your connector o
 | `username` | string | Yes | Username in the format `username@companyId`. The Company ID identifies your SAP SuccessFactors tenant. | `sfadmin@COMPANY123` |
 | `password` | string | Yes | Password for the user account with API access permissions. | `********` |
 
-**Note:** This connector does NOT use any table-level options that need to be passed through `externalOptionsAllowList`. All configuration is handled at the connection level.
+**Note:** The `externalOptionsAllowList` must include `tableConfigs,tableNameList` - these are required framework options that the pipeline uses for metadata retrieval.
 
 ### Getting Your Credentials
 
@@ -105,7 +105,7 @@ databricks connections create \
       "endpoint_url": "https://api.successfactors.com/",
       "username": "your-username@COMPANY_ID",
       "password": "your-password",
-      "externalOptionsAllowList": ""
+      "externalOptionsAllowList": "tableConfigs,tableNameList"
     }
   }'
 ```
@@ -113,7 +113,7 @@ databricks connections create \
 **Important Notes:**
 
 - `sourceName`: Must be set to `"sap_successfactors"` exactly as shown. This identifies the connector to use.
-- `externalOptionsAllowList`: Set to an empty string `""` because this connector does NOT use any table-level options. All configuration is handled through the connection parameters.
+- `externalOptionsAllowList`: Must include `"tableConfigs,tableNameList"` - these are **required framework options** that the pipeline uses for metadata retrieval. Without these, the pipeline will fail with `DATA_SOURCE_OPTION_NOT_ALLOWED_BY_CONNECTION` error.
 
 #### Managing Connections
 

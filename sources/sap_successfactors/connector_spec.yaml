@@ -38,8 +38,14 @@ connection:
 
 # ============================================================================
 # External Options Allowlist
-# These table-specific options must be included in the externalOptionsAllowList
-# parameter of the UC connection to allow them to be passed through.
-# If no table-specific options are needed, set to empty string.
+# These options must be included in the externalOptionsAllowList parameter of
+# the UC connection to allow them to be passed through from the pipeline.
+#
+# Required framework options:
+#   - tableConfigs: Table-specific configurations from pipeline spec
+#   - tableNameList: List of tables for metadata retrieval
+#
+# These are framework-level options required for the pipeline to function.
+# Add any connector-specific table options here as well.
 # ============================================================================
-external_options_allowlist: ""
+external_options_allowlist: "tableConfigs,tableNameList"
