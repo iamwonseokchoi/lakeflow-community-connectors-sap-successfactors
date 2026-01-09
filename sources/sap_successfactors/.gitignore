@@ -4,3 +4,4 @@ test/__pycache__/
 test/**/*.pyc
 test/test_results/
 docs/
+EXCEPTIONS.md
