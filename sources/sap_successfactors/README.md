@@ -655,7 +655,7 @@ ingest(spark, pipeline_spec)
 
 ### 404 Not Found (58 tables)
 
-These entities are not available on the demo instance:
+These entities are not available on demo instances but should work with appropriate SAP license:
 
 | Category | Tables |
 |----------|--------|
@@ -671,24 +671,12 @@ These entities are not available on the demo instance:
 
 ### 403 Forbidden (2 tables)
 
-These entities require elevated permissions:
+These entities require elevated permissions on SAP SuccessFactors:
 
 | Table Name | Description |
 |-----------|-------------|
 | Successor | Succession planning data |
 | NomineeHistory | Nomination history records |
-
-### 400 Bad Request (37 tables)
-
-These entities require additional query parameters or special configuration:
-
-| Category | Tables |
-|----------|--------|
-| EC-Core | EmpCompensationCalculated, EmpCompensationGroupSumCalculated, PersonEmpTerminationInfo |
-| Performance | CalibrationSession, CalibrationSessionSubject, CalibrationTemplate, achievement, activity, calibration_session, calibration_subject_comment, form360_participant_detail, form_competency, form_review_feedback, goal_permission_1, goal_plan_state, goal_task_1, goal_weight |
-| PLT-Core | DGExpression, DGFieldOperator, DGFieldValue, DGFilter, DGPeoplePool, MDFEnumValue, MDFLocalizedValue, UserPermissions, continuous_performance_user_permission |
-| PLT-Extended | EMMonitoredProcess, success_store_content, success_store_content_blob, theme_info, theme_template |
-| Recruiting | CandidateBackground_Education, CandidateBackground_InsideWorkExperience, CandidateBackground_OutsideWorkExperience, JobApplicationSnapshot_Education, JobApplicationSnapshot_InsideWorkExperience, JobApplicationSnapshot_OutsideWorkExperience |
 
 ---
 
