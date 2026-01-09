@@ -1038,7 +1038,7 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "PicklistOption": {
         "entity_set": "PicklistOption",
-        "primary_keys": ["id", "externalCode", "optionValue"],
+        "primary_keys": ["id", "externalCode", "optionValue", "sortOrder", "status"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },
@@ -1068,7 +1068,7 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "RcmCompetency": {
         "entity_set": "RcmCompetency",
-        "primary_keys": ["rcmCompetencyId"],
+        "primary_keys": ["rcmCompetencyId", "locale"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },
@@ -1116,7 +1116,7 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "TalentRatings": {
         "entity_set": "TalentRatings",
-        "primary_keys": ["feedbackId", "feedbackModule", "formDataId"],
+        "primary_keys": ["feedbackId", "feedbackModule", "formDataId", "formContentId", "feedbackType", "feedbackSource", "feedbackScaleId", "employeeId"],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },

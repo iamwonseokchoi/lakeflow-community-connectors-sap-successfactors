@@ -246,7 +246,7 @@ Recruitment data including candidates, job applications, job requisitions, inter
 | JobRequisitionPosting | jobPostingId | lastModifiedDateTime | CDC |
 | OfferLetter | offerLetterId | lastModifiedDate | CDC |
 | RCMAdminReassignOfferApprover | applicationId, currUserId, offerDetailId | - | Snapshot |
-| RcmCompetency | rcmCompetencyId | - | Snapshot |
+| RcmCompetency | rcmCompetencyId, locale | - | Snapshot |
 
 ### 4. Platform Core (10 tables)
 
@@ -259,7 +259,7 @@ Core platform data including users, permissions, groups, and picklist configurat
 | LocalizedData | localizedDataCode, localizedDataLocale | - | Snapshot |
 | PickListV2 | effectiveStartDate, id | lastModifiedDateTime | CDC |
 | PickListValueV2 | PickListV2_effectiveStartDate, PickListV2_id, externalCode | lastModifiedDateTime | CDC |
-| PicklistOption | id, externalCode, optionValue | - | Snapshot |
+| PicklistOption | id, externalCode, optionValue, sortOrder, status | - | Snapshot |
 | RBPBasicPermission | permissionId | - | Snapshot |
 | RBPRole | roleId | lastModifiedDate | CDC |
 | RBPRule | ruleId | - | Snapshot |
@@ -274,7 +274,7 @@ Performance management data including goals, forms, calibration, and talent rati
 | CalibrationSubjectRank | subjectRankId | - | Snapshot |
 | TalentGraphicOption | dataIndex, optionKey | - | Snapshot |
 | TalentPool | code, effectiveStartDate | lastModifiedDateTime | CDC |
-| TalentRatings | feedbackId, feedbackModule, formDataId | - | Snapshot |
+| TalentRatings | feedbackId, feedbackModule, formDataId, formContentId, feedbackType, feedbackSource, feedbackScaleId, employeeId | - | Snapshot |
 | form_customized_weighted_rating_section | formContentId, formDataId | - | Snapshot |
 | form_folder | folderId | - | Snapshot |
 | form_header | formDataId | formLastModifiedDate | CDC |

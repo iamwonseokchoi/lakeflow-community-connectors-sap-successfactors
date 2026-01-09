@@ -1221,7 +1221,7 @@ def register_lakeflow_source(spark):
         },
         "PicklistOption": {
             "entity_set": "PicklistOption",
-            "primary_keys": ["id", "externalCode", "optionValue"],
+            "primary_keys": ["id", "externalCode", "optionValue", "sortOrder", "status"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
@@ -1251,7 +1251,7 @@ def register_lakeflow_source(spark):
         },
         "RcmCompetency": {
             "entity_set": "RcmCompetency",
-            "primary_keys": ["rcmCompetencyId"],
+            "primary_keys": ["rcmCompetencyId", "locale"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
@@ -1299,7 +1299,7 @@ def register_lakeflow_source(spark):
         },
         "TalentRatings": {
             "entity_set": "TalentRatings",
-            "primary_keys": ["feedbackId", "feedbackModule", "formDataId"],
+            "primary_keys": ["feedbackId", "feedbackModule", "formDataId", "formContentId", "feedbackType", "feedbackSource", "feedbackScaleId", "employeeId"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
