@@ -14,13 +14,16 @@ project_root = os.path.dirname(
 )
 sys.path.insert(0, project_root)
 
+# pylint: disable=wrong-import-position
 from sources.sap_successfactors.sap_successfactors import _TABLE_CONFIG
+# pylint: enable=wrong-import-position
 
 # Get all table names
 ALL_TABLES = list(_TABLE_CONFIG.keys())
 
 
 def _categorize_tables():
+    # pylint: disable=too-many-branches
     """Categorize tables into module groups based on naming patterns."""
     groups = {
         "EC-Core": [],        # Employee Central Core

@@ -54,7 +54,11 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "AdvancesInstallments": {
         "entity_set": "AdvancesInstallments",
-        "primary_keys": ["Advance_externalCode", "NonRecurringPayment_externalCode", "externalCode"],
+        "primary_keys": [
+            "Advance_externalCode",
+            "NonRecurringPayment_externalCode",
+            "externalCode"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -432,7 +436,11 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "EmployeePayrollRunResultsItems": {
         "entity_set": "EmployeePayrollRunResultsItems",
-        "primary_keys": ["EmployeePayrollRunResults_externalCode", "EmployeePayrollRunResults_mdfSystemEffectiveStartDate", "externalCode"],
+        "primary_keys": [
+            "EmployeePayrollRunResults_externalCode",
+            "EmployeePayrollRunResults_mdfSystemEffectiveStartDate",
+            "externalCode"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -685,8 +693,8 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     "JobApplicationOnboardingStatus": {
         "entity_set": "JobApplicationOnboardingStatus",
         "primary_keys": ["onboardingStatusId"],
-        "cursor_field": "lastModifiedDate",
-        "ingestion_type": "cdc",
+        "cursor_field": None,
+        "ingestion_type": "snapshot",
     },
     "JobApplicationQuestionResponse": {
         "entity_set": "JobApplicationQuestionResponse",
@@ -912,13 +920,22 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "OnboardingEquipment": {
         "entity_set": "OnboardingEquipment",
-        "primary_keys": ["OnboardingEquipmentActivity_activityId", "OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "equipmentId"],
+        "primary_keys": [
+            "OnboardingEquipmentActivity_activityId",
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "equipmentId"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "OnboardingEquipmentActivity": {
         "entity_set": "OnboardingEquipmentActivity",
-        "primary_keys": ["OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "activityId"],
+        "primary_keys": [
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "activityId"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -936,31 +953,55 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "OnboardingGoal": {
         "entity_set": "OnboardingGoal",
-        "primary_keys": ["OnboardingGoalActivity_activityId", "OnboardingGoalCategory_externalCode", "OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "goalId"],
+        "primary_keys": [
+            "OnboardingGoalActivity_activityId",
+            "OnboardingGoalCategory_externalCode",
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "goalId"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "OnboardingGoalActivity": {
         "entity_set": "OnboardingGoalActivity",
-        "primary_keys": ["OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "activityId"],
+        "primary_keys": [
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "activityId"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "OnboardingGoalCategory": {
         "entity_set": "OnboardingGoalCategory",
-        "primary_keys": ["OnboardingGoalActivity_activityId", "OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "externalCode"],
+        "primary_keys": [
+            "OnboardingGoalActivity_activityId",
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "externalCode"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "OnboardingMeetingActivity": {
         "entity_set": "OnboardingMeetingActivity",
-        "primary_keys": ["OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "activityId"],
+        "primary_keys": [
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "activityId"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "OnboardingMeetingEvent": {
         "entity_set": "OnboardingMeetingEvent",
-        "primary_keys": ["OnboardingMeetingActivity_activityId", "OnboardingNewHireActivitiesStep_processStepId", "OnboardingProcess_onboardingProcessId", "externalCode"],
+        "primary_keys": [
+            "OnboardingMeetingActivity_activityId",
+            "OnboardingNewHireActivitiesStep_processStepId",
+            "OnboardingProcess_onboardingProcessId",
+            "externalCode"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -984,13 +1025,22 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "PaymentInformationDetailV3": {
         "entity_set": "PaymentInformationDetailV3",
-        "primary_keys": ["externalCode", "PaymentInformationV3_worker", "PaymentInformationV3_effectiveStartDate"],
+        "primary_keys": [
+            "externalCode",
+            "PaymentInformationV3_worker",
+            "PaymentInformationV3_effectiveStartDate"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
     "PaymentInformationDetailV3USA": {
         "entity_set": "PaymentInformationDetailV3USA",
-        "primary_keys": ["externalCode", "PaymentInformationV3_worker", "PaymentInformationV3_effectiveStartDate", "PaymentInformationDetailV3_externalCode"],
+        "primary_keys": [
+            "externalCode",
+            "PaymentInformationV3_worker",
+            "PaymentInformationV3_effectiveStartDate",
+            "PaymentInformationDetailV3_externalCode"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -1080,7 +1130,11 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "RecurringDeductionItem": {
         "entity_set": "RecurringDeductionItem",
-        "primary_keys": ["RecurringDeduction_effectiveStartDate", "RecurringDeduction_userSysId", "payComponentType"],
+        "primary_keys": [
+            "RecurringDeduction_effectiveStartDate",
+            "RecurringDeduction_userSysId",
+            "payComponentType"
+        ],
         "cursor_field": "lastModifiedDateTime",
         "ingestion_type": "cdc",
     },
@@ -1116,7 +1170,16 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
     },
     "TalentRatings": {
         "entity_set": "TalentRatings",
-        "primary_keys": ["feedbackId", "feedbackModule", "formDataId", "formContentId", "feedbackType", "feedbackSource", "feedbackScaleId", "employeeId"],
+        "primary_keys": [
+            "feedbackId",
+            "feedbackModule",
+            "formDataId",
+            "formContentId",
+            "feedbackType",
+            "feedbackSource",
+            "feedbackScaleId",
+            "employeeId"
+        ],
         "cursor_field": None,
         "ingestion_type": "snapshot",
     },
@@ -5184,7 +5247,8 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("leaveOfAbsence", BooleanType(), True),
         StructField("mainAbsenceTimeType", BooleanType(), True),
         StructField("flexibleRequestingAllowed", BooleanType(), True),
-        StructField("allowedFractions", StringType(), True),  # Enum: FULL_DAY, HALF_DAY, QUARTER_DAY, FULL_HOURS, HOURS_MINUTES
+        # Enum: FULL_DAY, HALF_DAY, QUARTER_DAY, FULL_HOURS, HOURS_MINUTES
+        StructField("allowedFractions", StringType(), True),
     ]),
     "budget_period": StructType([
         StructField("budgetPeriodId", StringType(), True),
@@ -5542,10 +5606,14 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("attributes", StringType(), True),  # JSON array serialized
     ]),
     "extension_point_task": StructType([
-        StructField("taskType", StringType(), True),       # enum: HIRING_MANAGER_REVIEW_EXTENSION, PERSONAL_DATA_COLLECTION_EXTENSION
-        StructField("taskId", StringType(), True),         # Extension task identifier
-        StructField("processStatus", StringType(), True),  # enum: SCHEDULED, IN_PROGRESS, COMPLETED, CANCELLED_POST_COMPLETION, CANCELLED, SKIPPED, DECLINED, CLOSED
-        StructField("processId", StringType(), True),      # Onboarding process ID (from path parameter, included for reference)
+        # enum: HIRING_MANAGER_REVIEW_EXTENSION, PERSONAL_DATA_COLLECTION_EXTENSION
+        StructField("taskType", StringType(), True),
+        StructField("taskId", StringType(), True),
+        # enum: SCHEDULED, IN_PROGRESS, COMPLETED, CANCELLED_POST_COMPLETION,
+        # CANCELLED, SKIPPED, DECLINED, CLOSED
+        StructField("processStatus", StringType(), True),
+        # Onboarding process ID (from path parameter)
+        StructField("processId", StringType(), True),
     ]),
     "feedback": StructType([
         StructField("recordId", StringType(), False),
@@ -5893,7 +5961,9 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("ssn", StringType(), True),
         StructField("emailAddress", StringType(), True),
         StructField("phoneNumber", StringType(), True),
-        StructField("citizenshipType", StringType(), True),  # enum: US_CITIZEN, US_NATIONAL, LAWFUL_PERMANENT_RESIDENT, ALIEN_AUTHORIZED_TO_WORK
+        # enum: US_CITIZEN, US_NATIONAL, LAWFUL_PERMANENT_RESIDENT,
+        # ALIEN_AUTHORIZED_TO_WORK
+        StructField("citizenshipType", StringType(), True),
         StructField("alienRegistrationNumber", StringType(), True),
         StructField("uscisNumber", StringType(), True),
         StructField("i94AdministrationNum", StringType(), True),
@@ -5902,7 +5972,8 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("visaType", StringType(), True),  # enum: F1, J1, H1B, etc.
         StructField("visaNum", StringType(), True),
         StructField("visaExpirationDate", StringType(), True),  # date format
-        StructField("protectedStatus", StringType(), True),  # enum: REFUGEE, ASYLEE, OTHERPROTECTED, NONE
+        # enum: REFUGEE, ASYLEE, OTHERPROTECTED, NONE
+        StructField("protectedStatus", StringType(), True),
         StructField("translator1", StringType(), True),
         StructField("translator2", StringType(), True),
         StructField("translator3", StringType(), True),
@@ -6054,7 +6125,8 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("version", StringType(), True),
         ]), True),
         # GroupExtensionVersion2 - generic object for extension data
-        StructField("GroupExtensionVersion2", StringType(), True),  # JSON string for flexible extension data
+        # JSON string for flexible extension data
+        StructField("GroupExtensionVersion2", StringType(), True),
     ]),
     "scim_user": StructType([
         StructField("id", StringType(), True),
@@ -6259,9 +6331,11 @@ _TABLE_SCHEMAS: Dict[str, StructType] = {
         StructField("crossMidnight", BooleanType(), False),
         StructField("type", StringType(), False),  # ABSENCE, PUBLIC_HOLIDAY, NON_WORKING_DAY
         StructField("typeFormatted", StringType(), False),
-        StructField("status", StringType(), True),  # PENDING, CANCELLED, APPROVED, REJECTED, PENDING_CANCELLATION
+        # PENDING, CANCELLED, APPROVED, REJECTED, PENDING_CANCELLATION
+        StructField("status", StringType(), True),
         StructField("statusFormatted", StringType(), True),
-        StructField("absenceDurationCategory", StringType(), True),  # MULTI_DAY, SINGLE_FULL_DAY, etc.
+        # MULTI_DAY, SINGLE_FULL_DAY, etc.
+        StructField("absenceDurationCategory", StringType(), True),
     ]),
     "time_type_balances": StructType([
         StructField("mainAbsenceTimeType", BooleanType(), True),
@@ -6596,6 +6670,7 @@ class LakeflowConnect:
 
         return unique_records
 
+    # pylint: disable=too-many-locals
     def _fetch_all_pages(
         self, base_url: str, params: Dict[str, str], cursor_field: Optional[str] = None
     ) -> Tuple[List[Dict], Optional[str]]:
@@ -6635,7 +6710,8 @@ class LakeflowConnect:
             data = response.json()
 
             # Extract records from response
-            # OData v2 format: {"d": {"results": [...]}} or {"d": {"results": [...], "__next": "..."}}
+            # OData v2 format: {"d": {"results": [...]}}
+            # or {"d": {"results": [...], "__next": "..."}}
             d = data.get("d", {})
 
             if isinstance(d, dict):
@@ -6753,7 +6829,7 @@ class LakeflowConnect:
                 if "__deferred" in value:
                     # Skip deferred navigation properties
                     continue
-                elif "__metadata" in value:
+                if "__metadata" in value:
                     # Process nested entity, removing metadata
                     processed[key] = self._process_record(value)
                 else:

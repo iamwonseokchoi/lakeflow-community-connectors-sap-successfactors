@@ -228,7 +228,7 @@ Recruitment data including candidates, job applications, job requisitions, inter
 | JobApplicationComments | commentId | - | Snapshot |
 | JobApplicationInterview | applicationInterviewId | - | Snapshot |
 | JobApplicationOnboardingData | onboardingId | - | Snapshot |
-| JobApplicationOnboardingStatus | onboardingStatusId | lastModifiedDate | CDC |
+| JobApplicationOnboardingStatus | onboardingStatusId | - | Snapshot |
 | JobApplicationQuestionResponse | applicationId, order | - | Snapshot |
 | JobApplicationStatus | appStatusSetId | - | Snapshot |
 | JobApplicationStatusAuditTrail | revNumber | lastModifiedDateTime | CDC |
