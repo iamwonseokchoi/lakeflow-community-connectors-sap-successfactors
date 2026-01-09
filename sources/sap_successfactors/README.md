@@ -237,8 +237,8 @@ Recruitment data including candidates, job applications, job requisitions, inter
 | JobOfferApprover | offerApproverId | lastModifiedDate | CDC |
 | JobReqFwdCandidates | candidateId, jobReqId | lastModifiedDate | CDC |
 | JobReqQuestion | questionId | - | Snapshot |
-| JobReqScreeningQuestion | questionId | - | Snapshot |
-| JobReqScreeningQuestionChoice | optionId | - | Snapshot |
+| JobReqScreeningQuestion | jobReqId, locale, order | - | Snapshot |
+| JobReqScreeningQuestionChoice | locale, optionId, optionValue | - | Snapshot |
 | JobRequisition | jobReqId | lastModifiedDateTime | CDC |
 | JobRequisitionGroupOperator | jobReqId, operatorRole, userGroupId | - | Snapshot |
 | JobRequisitionLocale | jobReqLocalId | - | Snapshot |
@@ -259,7 +259,7 @@ Core platform data including users, permissions, groups, and picklist configurat
 | LocalizedData | localizedDataCode, localizedDataLocale | - | Snapshot |
 | PickListV2 | effectiveStartDate, id | lastModifiedDateTime | CDC |
 | PickListValueV2 | PickListV2_effectiveStartDate, PickListV2_id, externalCode | lastModifiedDateTime | CDC |
-| PicklistOption | id | - | Snapshot |
+| PicklistOption | id, externalCode | - | Snapshot |
 | RBPBasicPermission | permissionId | - | Snapshot |
 | RBPRole | roleId | lastModifiedDate | CDC |
 | RBPRule | ruleId | - | Snapshot |
@@ -274,7 +274,7 @@ Performance management data including goals, forms, calibration, and talent rati
 | CalibrationSubjectRank | subjectRankId | - | Snapshot |
 | TalentGraphicOption | dataIndex, optionKey | - | Snapshot |
 | TalentPool | code, effectiveStartDate | lastModifiedDateTime | CDC |
-| TalentRatings | feedbackId | - | Snapshot |
+| TalentRatings | feedbackId, feedbackModule | - | Snapshot |
 | form_customized_weighted_rating_section | formContentId, formDataId | - | Snapshot |
 | form_folder | folderId | - | Snapshot |
 | form_header | formDataId | formLastModifiedDate | CDC |

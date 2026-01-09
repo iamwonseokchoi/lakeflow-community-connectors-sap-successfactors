@@ -963,13 +963,13 @@ def register_lakeflow_source(spark):
         },
         "JobReqScreeningQuestion": {
             "entity_set": "JobReqScreeningQuestion",
-            "primary_keys": ["questionId"],
+            "primary_keys": ["jobReqId", "locale", "order"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
         "JobReqScreeningQuestionChoice": {
             "entity_set": "JobReqScreeningQuestionChoice",
-            "primary_keys": ["optionId"],
+            "primary_keys": ["locale", "optionId", "optionValue"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
@@ -1221,7 +1221,7 @@ def register_lakeflow_source(spark):
         },
         "PicklistOption": {
             "entity_set": "PicklistOption",
-            "primary_keys": ["id"],
+            "primary_keys": ["id", "externalCode"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
@@ -1299,7 +1299,7 @@ def register_lakeflow_source(spark):
         },
         "TalentRatings": {
             "entity_set": "TalentRatings",
-            "primary_keys": ["feedbackId"],
+            "primary_keys": ["feedbackId", "feedbackModule"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
