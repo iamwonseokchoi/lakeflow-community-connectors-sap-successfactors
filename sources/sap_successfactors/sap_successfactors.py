@@ -1537,6 +1537,8 @@ _TABLE_CONFIG: Dict[str, Dict[str, Any]] = {
 }
 # === TABLE_CONFIG_END ===
 
+# Tables that require de-duplication due to SAP API returning identical rows
+_DEDUPE_TABLES = {"PicklistOption", "TalentRatings"}
 
 # === TABLE_SCHEMAS_START ===
 # Spark schemas for each table
@@ -6552,6 +6554,10 @@ class LakeflowConnect:
         # Fetch all pages of data
         all_records, max_cursor = self._fetch_all_pages(url, params, cursor_field)
 
+        # De-duplicate records for tables known to have identical duplicates from SAP API
+        if table_name in _DEDUPE_TABLES:
+            all_records = self._deduplicate_records(all_records)
+
         # For snapshot, we can optionally track the max cursor for future CDC
         if max_cursor:
             new_offset = {"cursor_value": max_cursor}
@@ -6559,6 +6565,36 @@ class LakeflowConnect:
             new_offset = {}
 
         return iter(all_records), new_offset
+
+    def _deduplicate_records(self, records: List[Dict]) -> List[Dict]:
+        """
+        Remove duplicate records based on full row content.
+
+        SAP SuccessFactors API sometimes returns identical duplicate rows
+        for certain entities. This method filters them out.
+
+        Args:
+            records: List of record dictionaries
+
+        Returns:
+            List of unique records (preserving order)
+        """
+        seen = set()
+        unique_records = []
+
+        for record in records:
+            # Create a hashable key from all field values
+            # Sort keys for consistent ordering, convert values to strings for hashability
+            record_key = tuple(
+                (k, str(v) if v is not None else None)
+                for k, v in sorted(record.items())
+            )
+
+            if record_key not in seen:
+                seen.add(record_key)
+                unique_records.append(record)
+
+        return unique_records
 
     def _fetch_all_pages(
         self, base_url: str, params: Dict[str, str], cursor_field: Optional[str] = None
