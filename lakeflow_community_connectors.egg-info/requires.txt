@@ -1,0 +1,7 @@
+pyspark>=3.5.0
+pydantic>=2.0.0
+requests>=2.32.5
+
+[dev]
+pytest>=7.0.0
+pytest-cov>=4.0.0
