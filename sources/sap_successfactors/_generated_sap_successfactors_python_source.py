@@ -1221,7 +1221,7 @@ def register_lakeflow_source(spark):
         },
         "PicklistOption": {
             "entity_set": "PicklistOption",
-            "primary_keys": ["id", "externalCode"],
+            "primary_keys": ["id", "externalCode", "optionValue"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
@@ -1299,7 +1299,7 @@ def register_lakeflow_source(spark):
         },
         "TalentRatings": {
             "entity_set": "TalentRatings",
-            "primary_keys": ["feedbackId", "feedbackModule"],
+            "primary_keys": ["feedbackId", "feedbackModule", "formDataId"],
             "cursor_field": None,
             "ingestion_type": "snapshot",
         },
