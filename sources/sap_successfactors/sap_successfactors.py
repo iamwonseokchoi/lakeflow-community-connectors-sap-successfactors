@@ -1,4 +1,3 @@
-# pylint: disable=C0302
 # SAP SuccessFactors Connector for Lakeflow Connect.
 #
 # This connector implements the LakeflowConnect interface to ingest data from
